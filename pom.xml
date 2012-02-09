@@ -40,7 +40,6 @@
         <build.directory.cdk.generator>${directory.cdk}/generator/target</build.directory.cdk.generator>
         <build.directory.cdk.generator>${directory.cdk}/generator/target</build.directory.cdk.generator>
         <build.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/target</build.directory.cdk.maven-cdk-plugin>
-<!--         <build.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/target</build.directory.cdk.maven-javascript-plugin> -->
         <build.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/target</build.directory.cdk.maven-resources-plugin>
         <build.directory.cdk.xinclude>${directory.cdk}/xinclude/target</build.directory.cdk.xinclude>
         <build.directory.core.api>${directory.core}/api/target/</build.directory.core.api>
@@ -53,7 +52,6 @@
         <build.directory.components.input.ui>${directory.components}/input/ui/target</build.directory.components.input.ui>
         <build.directory.components.iteration.api>${directory.components}/iteration/api/target</build.directory.components.iteration.api>
         <build.directory.components.iteration.ui>${directory.components}/iteration/ui/target</build.directory.components.iteration.ui>
-<!--         <build.directory.components.misc.api>${directory.components}/misc/api/target</build.directory.components.misc.api> -->
         <build.directory.components.misc.ui>${directory.components}/misc/ui/target</build.directory.components.misc.ui>
         <build.directory.components.output.api>${directory.components}/output/api/target</build.directory.components.output.api>
         <build.directory.components.output.ui>${directory.components}/output/ui/target</build.directory.components.output.ui>
@@ -70,7 +68,6 @@
         <classes.directory.cdk.generator>${directory.cdk}/generator/target/classes</classes.directory.cdk.generator>
         <classes.directory.cdk.generator>${directory.cdk}/generator/target/classes</classes.directory.cdk.generator>
         <classes.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/target/classes</classes.directory.cdk.maven-cdk-plugin>
-<!--         <classes.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/target/classes</classes.directory.cdk.maven-javascript-plugin> -->
         <classes.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/target/classes</classes.directory.cdk.maven-resources-plugin>
         <classes.directory.cdk.xinclude>${directory.cdk}/xinclude/target/classes</classes.directory.cdk.xinclude>
         <classes.directory.components.common.api>${directory.components}/common/api/target/classes</classes.directory.components.common.api>
@@ -83,7 +80,6 @@
         <classes.directory.components.input.ui>${directory.components}/input/ui/target/classes</classes.directory.components.input.ui>
         <classes.directory.components.iteration.api>${directory.components}/iteration/api/target/classes</classes.directory.components.iteration.api>
         <classes.directory.components.iteration.ui>${directory.components}/iteration/ui/target/classes</classes.directory.components.iteration.ui>
-<!--         <classes.directory.components.misc.api>${directory.components}/misc/api/target/classes</classes.directory.components.misc.api> -->
         <classes.directory.components.misc.ui>${directory.components}/misc/ui/target/classes</classes.directory.components.misc.ui>
         <classes.directory.components.output.api>${directory.components}/output/api/target/classes</classes.directory.components.output.api>
         <classes.directory.components.output.ui>${directory.components}/output/ui/target/classes</classes.directory.components.output.ui>
@@ -104,7 +100,6 @@
         <sources.directory.cdk.generator>${directory.cdk}/generator/src/main/java</sources.directory.cdk.generator>
         <sources.directory.cdk.generator>${directory.cdk}/generator/src/main/java</sources.directory.cdk.generator>
         <sources.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/src/main/java</sources.directory.cdk.maven-cdk-plugin>
-<!--         <sources.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/src/main/java</sources.directory.cdk.maven-javascript-plugin> -->
         <sources.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/src/main/java</sources.directory.cdk.maven-resources-plugin>
         <sources.directory.cdk.xinclude>${directory.cdk}/xinclude/src/main/java</sources.directory.cdk.xinclude>
         <sources.directory.components.common.api>${directory.components}/common/api/src/main/java</sources.directory.components.common.api>
@@ -117,15 +112,22 @@
         <sources.directory.components.input.ui>${directory.components}/input/ui/src/main/java</sources.directory.components.input.ui>
         <sources.directory.components.iteration.api>${directory.components}/iteration/api/src/main/java</sources.directory.components.iteration.api>
         <sources.directory.components.iteration.ui>${directory.components}/iteration/ui/src/main/java</sources.directory.components.iteration.ui>
-<!--         <sources.directory.components.misc.api>${directory.components}/misc/api/src/main/java</sources.directory.components.misc.api> -->
         <sources.directory.components.misc.ui>${directory.components}/misc/ui/src/main/java</sources.directory.components.misc.ui>
         <sources.directory.components.output.api>${directory.components}/output/api/src/main/java</sources.directory.components.output.api>
         <sources.directory.components.output.ui>${directory.components}/output/ui/src/main/java</sources.directory.components.output.ui>
         <sources.directory.components.validator.api>${directory.components}/validator/api/src/main/java</sources.directory.components.validator.api>
         <sources.directory.components.validator.ui>${directory.components}/validator/ui/src/main/java</sources.directory.components.validator.ui>
-        <sources.directory.core.api>${directory.core}/api/src/main/java/sources</sources.directory.core.api>
         <sources.directory.core.api>${directory.core}/api/src/main/java</sources.directory.core.api>
         <sources.directory.core.impl>${directory.core}/impl/src/main/java</sources.directory.core.impl>
+        
+        <!-- Generated Sources -->
+        <generated-sources.directory.components.core.ui>${directory.components}/core/ui/target/generated-sources/main/java</generated-sources.directory.components.core.ui>
+        <generated-sources.directory.components.dnd.ui>${directory.components}/dnd/ui/target/generated-sources/main/java</generated-sources.directory.components.dnd.ui>
+        <generated-sources.directory.components.input.ui>${directory.components}/input/ui/target/generated-sources/main/java</generated-sources.directory.components.input.ui>
+        <generated-sources.directory.components.iteration.ui>${directory.components}/iteration/ui/target/generated-sources/main/java</generated-sources.directory.components.iteration.ui>
+        <generated-sources.directory.components.misc.ui>${directory.components}/misc/ui/target/generated-sources/main/java</generated-sources.directory.components.misc.ui>
+        <generated-sources.directory.components.output.ui>${directory.components}/output/ui/target/generated-sources/main/java</generated-sources.directory.components.output.ui>
+        <generated-sources.directory.components.validator.ui>${directory.components}/validator/ui/target/generated-sources/main/java</generated-sources.directory.components.validator.ui>
 
         <version.jacoco.plugin>0.5.5.201112152213</version.jacoco.plugin>
     </properties>
@@ -216,9 +218,6 @@
                                         <fileset dir="${build.directory.components.iteration.ui}">
                                             <include name="jacoco.exec" />
                                         </fileset>
-<!--                                         <fileset dir="${build.directory.components.misc.api}"> -->
-<!--                                             <include name="jacoco.exec" /> -->
-<!--                                         </fileset> -->
                                         <fileset dir="${build.directory.components.misc.ui}">
                                             <include name="jacoco.exec" />
                                         </fileset>
@@ -249,9 +248,6 @@
                                         <fileset dir="${build.directory.cdk.maven-cdk-plugin}">
                                             <include name="jacoco.exec" />
                                         </fileset>
-<!--                                         <fileset dir="${build.directory.cdk.maven-javascript-plugin}"> -->
-<!--                                             <include name="jacoco.exec" /> -->
-<!--                                         </fileset> -->
                                         <fileset dir="${build.directory.cdk.maven-resources-plugin}">
                                             <include name="jacoco.exec" />
                                         </fileset>
@@ -281,7 +277,6 @@
                                                 <fileset dir="${classes.directory.components.core.api}" />
                                                 <fileset dir="${classes.directory.components.common.api}" />
                                                 <fileset dir="${classes.directory.components.dnd.api}" />
-<!--                                                 <fileset dir="${classes.directory.components.misc.api}" /> -->
                                                 <fileset dir="${classes.directory.components.input.api}" />
                                                 <fileset dir="${classes.directory.components.iteration.api}" />
                                                 <fileset dir="${classes.directory.components.output.api}" />
@@ -291,11 +286,10 @@
                                                 <fileset dir="${sources.directory.components.core.api}" />
                                                 <fileset dir="${sources.directory.components.common.api}" />
                                                 <fileset dir="${sources.directory.components.dnd.api}" />
-<!--                                                 <fileset dir="${sources.directory.components.misc.api}" /> -->
                                                 <fileset dir="${sources.directory.components.input.api}" />
                                                 <fileset dir="${sources.directory.components.iteration.api}" />
                                                 <fileset dir="${sources.directory.components.output.api}" />
-                                                <fileset dir="${sources.directory.components.validator.api}" />                                                
+                                                <fileset dir="${sources.directory.components.validator.api}" />
                                             </sourcefiles>
                                         </group>
                                         <group name="Richfaces Components UI">
@@ -317,7 +311,15 @@
                                                 <fileset dir="${sources.directory.components.input.ui}" />
                                                 <fileset dir="${sources.directory.components.iteration.ui}" />
                                                 <fileset dir="${sources.directory.components.output.ui}" />
-                                                <fileset dir="${sources.directory.components.validator.ui}" /> 
+                                                <fileset dir="${sources.directory.components.validator.ui}" />
+                                                
+                                                <fileset dir="${generated-sources.directory.components.core.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.dnd.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.misc.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.input.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.iteration.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.output.ui}" />
+                                                <fileset dir="${generated-sources.directory.components.validator.ui}" />  
                                             </sourcefiles>
                                         </group>
                                         <group name="Richfaces CDK">
@@ -327,7 +329,6 @@
                                                 <fileset dir="${classes.directory.cdk.commons}" />
                                                 <fileset dir="${classes.directory.cdk.generator}" />
                                                 <fileset dir="${classes.directory.cdk.maven-cdk-plugin}" />
-<!--                                                 <fileset dir="${classes.directory.cdk.maven-javascript-plugin}" /> -->
                                                 <fileset dir="${classes.directory.cdk.maven-resources-plugin}" />
                                                 <fileset dir="${classes.directory.cdk.xinclude}" />                         
                                             </classfiles>
@@ -337,7 +338,6 @@
                                                 <fileset dir="${sources.directory.cdk.commons}" />
                                                 <fileset dir="${sources.directory.cdk.generator}" />
                                                 <fileset dir="${sources.directory.cdk.maven-cdk-plugin}" />
-<!--                                                 <fileset dir="${sources.directory.cdk.maven-javascript-plugin}" /> -->
                                                 <fileset dir="${sources.directory.cdk.maven-resources-plugin}" />
                                                 <fileset dir="${sources.directory.cdk.xinclude}" />
                                             </sourcefiles>                                        
