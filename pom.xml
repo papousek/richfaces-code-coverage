@@ -1,0 +1,364 @@
+<!--
+    JBoss, Home of Professional Open Source Copyright 2010, Red Hat,
+    Inc. and individual contributors by the @authors tag. See the
+    copyright.txt in the distribution for a full listing of
+    individual contributors. This is free software; you can
+    redistribute it and/or modify it under the terms of the GNU
+    Lesser General Public License as published by the Free Software
+    Foundation; either version 2.1 of the License, or (at your
+    option) any later version. This software is distributed in the
+    hope that it will be useful, but WITHOUT ANY WARRANTY; without
+    even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+    PARTICULAR PURPOSE. See the GNU Lesser General Public License
+    for more details. You should have received a copy of the GNU
+    Lesser General Public License along with this software; if not,
+    write to the Free Software Foundation, Inc., 51 Franklin St,
+    Fifth Floor, Boston, MA 02110-1301 USA, or see the FSF site:
+    http://www.fsf.org.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.richfaces</groupId>
+        <artifactId>richfaces-parent</artifactId>
+        <version>12</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>richfaces-code-coverage</artifactId>
+    <packaging>pom</packaging>
+    <version>4.2.0-SNAPSHOT</version>
+    <name>RichFaces Code Coverage</name>
+
+    <properties>
+        <!-- Build directories -->
+        <build.directory.cdk.annotations>${directory.cdk}/annotations/target</build.directory.cdk.annotations>
+        <build.directory.cdk.attributes>${directory.cdk}/attributes/target</build.directory.cdk.attributes>
+        <build.directory.cdk.commons>${directory.cdk}/commons/target</build.directory.cdk.commons>
+        <build.directory.cdk.generator>${directory.cdk}/generator/target</build.directory.cdk.generator>
+        <build.directory.cdk.generator>${directory.cdk}/generator/target</build.directory.cdk.generator>
+        <build.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/target</build.directory.cdk.maven-cdk-plugin>
+<!--         <build.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/target</build.directory.cdk.maven-javascript-plugin> -->
+        <build.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/target</build.directory.cdk.maven-resources-plugin>
+        <build.directory.cdk.xinclude>${directory.cdk}/xinclude/target</build.directory.cdk.xinclude>
+        <build.directory.core.api>${directory.core}/api/target/</build.directory.core.api>
+        <build.directory.core.impl>${directory.core}/impl/target/</build.directory.core.impl>
+        <build.directory.components.common.api>${directory.components}/common/api/target</build.directory.components.common.api>
+        <build.directory.components.common.ui>${directory.components}/common/ui/target</build.directory.components.common.ui>
+        <build.directory.components.dnd.api>${directory.components}/dnd/api/target</build.directory.components.dnd.api>
+        <build.directory.components.dnd.ui>${directory.components}/dnd/ui/target</build.directory.components.dnd.ui>
+        <build.directory.components.input.api>${directory.components}/input/api/target</build.directory.components.input.api>
+        <build.directory.components.input.ui>${directory.components}/input/ui/target</build.directory.components.input.ui>
+        <build.directory.components.iteration.api>${directory.components}/iteration/api/target</build.directory.components.iteration.api>
+        <build.directory.components.iteration.ui>${directory.components}/iteration/ui/target</build.directory.components.iteration.ui>
+<!--         <build.directory.components.misc.api>${directory.components}/misc/api/target</build.directory.components.misc.api> -->
+        <build.directory.components.misc.ui>${directory.components}/misc/ui/target</build.directory.components.misc.ui>
+        <build.directory.components.output.api>${directory.components}/output/api/target</build.directory.components.output.api>
+        <build.directory.components.output.ui>${directory.components}/output/ui/target</build.directory.components.output.ui>
+        <build.directory.components.validator.api>${directory.components}/validator/api/target</build.directory.components.validator.api>
+        <build.directory.components.validator.ui>${directory.components}/validator/ui/target</build.directory.components.validator.ui>        
+        <build.directory.components.core.api>${directory.components}/core/api/target</build.directory.components.core.api>
+        <build.directory.components.core.ui>${directory.components}/core/ui/target</build.directory.components.core.ui>
+        
+
+        <!-- Classes -->
+        <classes.directory.cdk.annotations>${directory.cdk}/annotations/target/classes</classes.directory.cdk.annotations>
+        <classes.directory.cdk.attributes>${directory.cdk}/attributes/target/classes</classes.directory.cdk.attributes>
+        <classes.directory.cdk.commons>${directory.cdk}/commons/target/classes</classes.directory.cdk.commons>
+        <classes.directory.cdk.generator>${directory.cdk}/generator/target/classes</classes.directory.cdk.generator>
+        <classes.directory.cdk.generator>${directory.cdk}/generator/target/classes</classes.directory.cdk.generator>
+        <classes.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/target/classes</classes.directory.cdk.maven-cdk-plugin>
+<!--         <classes.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/target/classes</classes.directory.cdk.maven-javascript-plugin> -->
+        <classes.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/target/classes</classes.directory.cdk.maven-resources-plugin>
+        <classes.directory.cdk.xinclude>${directory.cdk}/xinclude/target/classes</classes.directory.cdk.xinclude>
+        <classes.directory.components.common.api>${directory.components}/common/api/target/classes</classes.directory.components.common.api>
+        <classes.directory.components.common.ui>${directory.components}/common/ui/target/classes</classes.directory.components.common.ui>
+        <classes.directory.components.core.api>${directory.components}/core/api/target/classes</classes.directory.components.core.api>
+        <classes.directory.components.core.ui>${directory.components}/core/ui/target/classes</classes.directory.components.core.ui>
+        <classes.directory.components.dnd.api>${directory.components}/dnd/api/target/classes</classes.directory.components.dnd.api>
+        <classes.directory.components.dnd.ui>${directory.components}/dnd/ui/target/classes</classes.directory.components.dnd.ui>
+        <classes.directory.components.input.api>${directory.components}/input/api/target/classes</classes.directory.components.input.api>
+        <classes.directory.components.input.ui>${directory.components}/input/ui/target/classes</classes.directory.components.input.ui>
+        <classes.directory.components.iteration.api>${directory.components}/iteration/api/target/classes</classes.directory.components.iteration.api>
+        <classes.directory.components.iteration.ui>${directory.components}/iteration/ui/target/classes</classes.directory.components.iteration.ui>
+<!--         <classes.directory.components.misc.api>${directory.components}/misc/api/target/classes</classes.directory.components.misc.api> -->
+        <classes.directory.components.misc.ui>${directory.components}/misc/ui/target/classes</classes.directory.components.misc.ui>
+        <classes.directory.components.output.api>${directory.components}/output/api/target/classes</classes.directory.components.output.api>
+        <classes.directory.components.output.ui>${directory.components}/output/ui/target/classes</classes.directory.components.output.ui>
+        <classes.directory.components.validator.api>${directory.components}/validator/api/target/classes</classes.directory.components.validator.api>
+        <classes.directory.components.validator.ui>${directory.components}/validator/ui/target/classes</classes.directory.components.validator.ui>
+        <classes.directory.core.api>${directory.core}/api/target/classes</classes.directory.core.api>
+        <classes.directory.core.impl>${directory.core}/impl/target/classes</classes.directory.core.impl>
+
+        <!-- Root directories -->
+        <directory.cdk>../cdk</directory.cdk> 
+        <directory.components>../components</directory.components>
+        <directory.core>../core</directory.core>
+        
+        <!-- Sources -->
+        <sources.directory.cdk.annotations>${directory.cdk}/annotations/src/main/java</sources.directory.cdk.annotations>
+        <sources.directory.cdk.attributes>${directory.cdk}/attributes/src/main/java</sources.directory.cdk.attributes>
+        <sources.directory.cdk.commons>${directory.cdk}/commons/src/main/java</sources.directory.cdk.commons>
+        <sources.directory.cdk.generator>${directory.cdk}/generator/src/main/java</sources.directory.cdk.generator>
+        <sources.directory.cdk.generator>${directory.cdk}/generator/src/main/java</sources.directory.cdk.generator>
+        <sources.directory.cdk.maven-cdk-plugin>${directory.cdk}/maven-cdk-plugin/src/main/java</sources.directory.cdk.maven-cdk-plugin>
+<!--         <sources.directory.cdk.maven-javascript-plugin>${directory.cdk}/maven-javascript-plugin/src/main/java</sources.directory.cdk.maven-javascript-plugin> -->
+        <sources.directory.cdk.maven-resources-plugin>${directory.cdk}/maven-resources-plugin/src/main/java</sources.directory.cdk.maven-resources-plugin>
+        <sources.directory.cdk.xinclude>${directory.cdk}/xinclude/src/main/java</sources.directory.cdk.xinclude>
+        <sources.directory.components.common.api>${directory.components}/common/api/src/main/java</sources.directory.components.common.api>
+        <sources.directory.components.common.ui>${directory.components}/common/ui/src/main/java</sources.directory.components.common.ui>
+        <sources.directory.components.core.api>${directory.components}/core/api/src/main/java</sources.directory.components.core.api>
+        <sources.directory.components.core.ui>${directory.components}/core/ui/src/main/java</sources.directory.components.core.ui>
+        <sources.directory.components.dnd.api>${directory.components}/dnd/api/src/main/java</sources.directory.components.dnd.api>
+        <sources.directory.components.dnd.ui>${directory.components}/dnd/ui/src/main/java</sources.directory.components.dnd.ui>
+        <sources.directory.components.input.api>${directory.components}/input/api/src/main/java</sources.directory.components.input.api>
+        <sources.directory.components.input.ui>${directory.components}/input/ui/src/main/java</sources.directory.components.input.ui>
+        <sources.directory.components.iteration.api>${directory.components}/iteration/api/src/main/java</sources.directory.components.iteration.api>
+        <sources.directory.components.iteration.ui>${directory.components}/iteration/ui/src/main/java</sources.directory.components.iteration.ui>
+<!--         <sources.directory.components.misc.api>${directory.components}/misc/api/src/main/java</sources.directory.components.misc.api> -->
+        <sources.directory.components.misc.ui>${directory.components}/misc/ui/src/main/java</sources.directory.components.misc.ui>
+        <sources.directory.components.output.api>${directory.components}/output/api/src/main/java</sources.directory.components.output.api>
+        <sources.directory.components.output.ui>${directory.components}/output/ui/src/main/java</sources.directory.components.output.ui>
+        <sources.directory.components.validator.api>${directory.components}/validator/api/src/main/java</sources.directory.components.validator.api>
+        <sources.directory.components.validator.ui>${directory.components}/validator/ui/src/main/java</sources.directory.components.validator.ui>
+        <sources.directory.core.api>${directory.core}/api/src/main/java/sources</sources.directory.core.api>
+        <sources.directory.core.api>${directory.core}/api/src/main/java</sources.directory.core.api>
+        <sources.directory.core.impl>${directory.core}/impl/src/main/java</sources.directory.core.impl>
+
+        <version.jacoco.plugin>0.5.5.201112152213</version.jacoco.plugin>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- Dependencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <!-- Copy the ant tasks jar. Needed for ts.jacoco.report-ant . -->
+                    <execution>
+                        <id>jacoco-dependency-ant</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>process-test-resources</phase>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.jacoco</groupId>
+                                    <artifactId>org.jacoco.ant</artifactId>
+                                    <version>${version.jacoco.plugin}</version>
+                                </artifactItem>
+                            </artifactItems>
+                            <stripVersion>true</stripVersion>
+                            <outputDirectory>${basedir}/target/jacoco-jars</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>        
+            <!-- Ant plugin. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>jacoco-report-ant</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <target>
+                                <taskdef name="report" classname="org.jacoco.ant.ReportTask">
+                                    <classpath path="${basedir}/target/jacoco-jars/org.jacoco.ant.jar" />
+                                </taskdef>
+                                <echo>Creating JaCoCo test coverage reports.</echo>
+                                <mkdir dir="${basedir}/target/coverage-report" />
+                                <report>
+                                    <executiondata>
+                                        <fileset dir="${build.directory.core.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.core.impl}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.common.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.common.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.core.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.core.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.dnd.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.dnd.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.input.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.input.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.iteration.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.iteration.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+<!--                                         <fileset dir="${build.directory.components.misc.api}"> -->
+<!--                                             <include name="jacoco.exec" /> -->
+<!--                                         </fileset> -->
+                                        <fileset dir="${build.directory.components.misc.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.output.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.output.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.validator.api}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.components.validator.ui}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.annotations}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.attributes}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.commons}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.generator}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.maven-cdk-plugin}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+<!--                                         <fileset dir="${build.directory.cdk.maven-javascript-plugin}"> -->
+<!--                                             <include name="jacoco.exec" /> -->
+<!--                                         </fileset> -->
+                                        <fileset dir="${build.directory.cdk.maven-resources-plugin}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                        <fileset dir="${build.directory.cdk.xinclude}">
+                                            <include name="jacoco.exec" />
+                                        </fileset>
+                                    </executiondata>
+                                    <structure name="RichFaces Project">
+                                        <group name="RichFaces Core API">
+                                            <classfiles>
+                                                <fileset dir="${classes.directory.core.api}" />
+                                            </classfiles>
+                                            <sourcefiles encoding="UTF-8">
+                                                <fileset dir="${sources.directory.core.api}" />
+                                            </sourcefiles>
+                                        </group>
+                                        <group name="RichFaces Core Implementation">
+                                            <classfiles>
+                                                <fileset dir="${classes.directory.core.impl}" />
+                                            </classfiles>
+                                            <sourcefiles encoding="UTF-8">
+                                                <fileset dir="${sources.directory.core.impl}" />
+                                            </sourcefiles>
+                                        </group>
+                                        <group name="Richfaces Components API">
+                                            <classfiles>
+                                                <fileset dir="${classes.directory.components.core.api}" />
+                                                <fileset dir="${classes.directory.components.common.api}" />
+                                                <fileset dir="${classes.directory.components.dnd.api}" />
+<!--                                                 <fileset dir="${classes.directory.components.misc.api}" /> -->
+                                                <fileset dir="${classes.directory.components.input.api}" />
+                                                <fileset dir="${classes.directory.components.iteration.api}" />
+                                                <fileset dir="${classes.directory.components.output.api}" />
+                                                <fileset dir="${classes.directory.components.validator.api}" />
+                                            </classfiles>
+                                            <sourcefiles encoding="UTF-8">
+                                                <fileset dir="${sources.directory.components.core.api}" />
+                                                <fileset dir="${sources.directory.components.common.api}" />
+                                                <fileset dir="${sources.directory.components.dnd.api}" />
+<!--                                                 <fileset dir="${sources.directory.components.misc.api}" /> -->
+                                                <fileset dir="${sources.directory.components.input.api}" />
+                                                <fileset dir="${sources.directory.components.iteration.api}" />
+                                                <fileset dir="${sources.directory.components.output.api}" />
+                                                <fileset dir="${sources.directory.components.validator.api}" />                                                
+                                            </sourcefiles>
+                                        </group>
+                                        <group name="Richfaces Components UI">
+                                            <classfiles>
+                                                <fileset dir="${classes.directory.components.core.ui}" />
+                                                <fileset dir="${classes.directory.components.common.ui}" />
+                                                <fileset dir="${classes.directory.components.dnd.ui}" />
+                                                <fileset dir="${classes.directory.components.misc.ui}" />
+                                                <fileset dir="${classes.directory.components.input.ui}" />
+                                                <fileset dir="${classes.directory.components.iteration.ui}" />
+                                                <fileset dir="${classes.directory.components.output.ui}" />
+                                                <fileset dir="${classes.directory.components.validator.ui}" />                                                 
+                                            </classfiles>
+                                            <sourcefiles encoding="UTF-8">
+                                                <fileset dir="${sources.directory.components.core.ui}" />
+                                                <fileset dir="${sources.directory.components.common.ui}" />
+                                                <fileset dir="${sources.directory.components.dnd.ui}" />
+                                                <fileset dir="${sources.directory.components.misc.ui}" />
+                                                <fileset dir="${sources.directory.components.input.ui}" />
+                                                <fileset dir="${sources.directory.components.iteration.ui}" />
+                                                <fileset dir="${sources.directory.components.output.ui}" />
+                                                <fileset dir="${sources.directory.components.validator.ui}" /> 
+                                            </sourcefiles>
+                                        </group>
+                                        <group name="Richfaces CDK">
+                                            <classfiles>
+                                                <fileset dir="${classes.directory.cdk.annotations}" />
+                                                <fileset dir="${classes.directory.cdk.attributes}" />
+                                                <fileset dir="${classes.directory.cdk.commons}" />
+                                                <fileset dir="${classes.directory.cdk.generator}" />
+                                                <fileset dir="${classes.directory.cdk.maven-cdk-plugin}" />
+<!--                                                 <fileset dir="${classes.directory.cdk.maven-javascript-plugin}" /> -->
+                                                <fileset dir="${classes.directory.cdk.maven-resources-plugin}" />
+                                                <fileset dir="${classes.directory.cdk.xinclude}" />                         
+                                            </classfiles>
+                                            <sourcefiles encoding="UTF-8">
+                                                <fileset dir="${sources.directory.cdk.annotations}" />
+                                                <fileset dir="${sources.directory.cdk.attributes}" />
+                                                <fileset dir="${sources.directory.cdk.commons}" />
+                                                <fileset dir="${sources.directory.cdk.generator}" />
+                                                <fileset dir="${sources.directory.cdk.maven-cdk-plugin}" />
+<!--                                                 <fileset dir="${sources.directory.cdk.maven-javascript-plugin}" /> -->
+                                                <fileset dir="${sources.directory.cdk.maven-resources-plugin}" />
+                                                <fileset dir="${sources.directory.cdk.xinclude}" />
+                                            </sourcefiles>                                        
+                                        </group>
+                                    </structure>
+                                    <html destdir="${basedir}/target/coverage-report/html" />
+                                    <xml destfile="${basedir}/target/coverage-report/coverage-report.xml" />
+                                    <csv destfile="${basedir}/target/coverage-report/coverage-report.csv" />
+                                </report>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>org.jacoco.ant</artifactId>
+                        <version>${version.jacoco.plugin}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
