@@ -29,7 +29,7 @@
 
     <artifactId>richfaces-code-coverage</artifactId>
     <packaging>pom</packaging>
-    <version>4.3.0-SNAPSHOT</version>
+    <version>4.2.1-SNAPSHOT</version>
     <name>RichFaces Code Coverage</name>
 
     <properties>
